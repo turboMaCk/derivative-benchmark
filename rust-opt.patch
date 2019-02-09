@@ -1,0 +1,23 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 09b4e36..ed27cdf 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1,5 +1,5 @@
+ [[package]]
+-name = "test-rs"
++name = "deriv-rs"
+ version = "0.1.0"
+ dependencies = [
+  "typed-arena 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
+diff --git a/src/main.rs b/src/main.rs
+index 28e7636..f77d717 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1,6 +1,6 @@
+ use std::env;
+ use std::fmt;
+-use Expr::*;
++use self::Expr::*;
+ 
+ struct Arena<'a>(typed_arena::Arena<Expr<'a>>);
+ 
