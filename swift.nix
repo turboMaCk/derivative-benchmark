@@ -1,8 +1,4 @@
-{ stdenv, fetchgit, swift
-, darwin ? null, ... }:
-let
-  inherit (darwin.apple_sdk.frameworks) CoreServices ApplicationServices;
-in
+{ stdenv, fetchgit, swift, ... }:
 with stdenv.lib;
 stdenv.mkDerivation {
   name = "derivate-benchmark-swift";
@@ -13,12 +9,11 @@ stdenv.mkDerivation {
     sha256 = "1drh6qk5hcn7nxffmylhjwmq70ybl2qp6jk3cvkxdhq3j5s5397k";
   };
 
-  buildInputs =  optionals stdenv.isDarwin [ CoreServices ApplicationServices ]
+  buildInputs = []
     ++ optionals stdenv.isLinux [ swift ];
 
   buildPhase = ''
-    ls -la
-    swiftc deriv.swift
+    swiftc -O deriv.swift
   '';
 
   installPhase = ''
