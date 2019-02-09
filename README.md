@@ -181,7 +181,7 @@ Benchmarking was done on my desktop Ryzen 7 1800x system with 32GB DDR4 2133MHz 
 ### Rust Optimized (typed arena)
 
 *Note that there might be some issues cargo version in nix.
-I'm using rust Mizilla's rust overly.*
+I'm using rust Mizilla's rust overlay.*
 
 ```
 	Command being timed: "./target/release/deriv-rs 10"
