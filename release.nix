@@ -5,6 +5,5 @@ with pkgs;
   rust = callPackage ./rust.nix {};
   rust-opt = callPackage ./rust-opt.nix {};
   haskell = callPackage ./haskell.nix {};
-} // stdenv.lib.optionals stdenv.isLinux {
-    swift = callPackage ./swift.nix {};
+  swift = callPackage ./swift.nix {};
 }
